@@ -1,0 +1,141 @@
+@use "../utilities/variables.scss";
+@use "../utilities/navigation.scss";
+
+.skills-category {
+  padding-top: 4%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  .skills-cards-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+//style of the card
+.skills-cards-box .skills-card {
+  flex: 0 50%;
+  background: variables.$white;
+  box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.9),
+    0 5px 15px 0 rgba(37, 44, 97, 0.15);
+  border-radius: 15px;
+  border: 2px inset variables.$white;
+  margin: 45px 15px 50px;
+  padding: 35px 15px 55px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  min-height: 265px;
+  transition: 0.7s;
+  .skills-card-title h3 {
+    color: #212121;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 13px 0px;
+    font-family: variables.$headrs-font-family;
+  }
+  &:hover {
+    background: #dae1eb;
+    color: variables.$white;
+    transform: scale(1.1);
+    z-index: 9;
+    border: 2px solid variables.$white;
+  }
+  &::before {
+    background: rgb(85 108 214 / 10%);
+  }
+  &:hover .skills-card-title h3 {
+    color: variables.$dark-blue;
+    font-weight: 500;
+  }
+  &:hover .solu_description p {
+    color: variables.$white;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    background: rgb(85 108 214 / 5%);
+    width: 170px;
+    height: 400px;
+    z-index: -1;
+    transform: rotate(42deg);
+    right: -56px;
+    top: -23px;
+    border-radius: 35px;
+  }
+}
+.hover-bubble {
+  position: absolute;
+  background: rgb(54 81 207 / 15%);
+  width: 100rem;
+  height: 100rem;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  top: 16rem;
+  border-radius: 50%;
+  transform: rotate(-36deg);
+  left: -18rem;
+  transition: 0.7s;
+}
+.skills-cards-box .skills-card:hover .hover-bubble {
+  top: 0rem;
+}
+
+//adjusts the image banner of the cards
+.skills-banner {
+  text-align: center;
+}
+.skills-banner img {
+  border: 2px inset variables.$white;
+  width: 100%;
+  border-radius: 10px;
+}
+
+//changes the style of the list
+.skills-icons .skill-icon {
+  line-height: 0.5rem;
+  list-style: none;
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  &:before {
+    content: "\0D4F";
+    margin-right: 20px;
+  }
+}
+
+/*media query*/
+@media screen and (min-width: 490px) {
+  .card_top_3 {
+    position: relative;
+    top: 0;
+  }
+  .skills-category {
+    width: 100%;
+    margin: 0 auto;
+    .skills-cards-box {
+      flex: auto;
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  .skills-category .skills-cards-box {
+    flex: 1;
+  }
+  .card_top_3 {
+    position: relative;
+    top: -3rem;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .card_top_3 {
+    position: relative;
+    top: -3rem;
+  }
+  .skills-category {
+    width: 60%;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,117 @@
+@use "../utilities/variables.scss";
+@use "../utilities/navigation.scss";
+
+.general-container {
+  margin: 4% auto;
+  display: flex;
+  flex-direction: row;
+  height: 30rem;
+  max-width: 100%;
+  width: 70rem;
+  .radio {
+    display: none;
+  }
+}
+.content {
+  background: variables.$white url(../../images/proj1.jpg) 100% / cover
+    no-repeat;
+  background-position: center;
+  border-radius: 3rem;
+  cursor: pointer;
+  flex: 1;
+  margin-right: 0.8rem;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  border: 1px solid variables.$white;
+  &:hover {
+    box-shadow: 0.3rem 0.3rem 0.4rem rgba(0, 0, 0, 0.3);
+  }
+  &:nth-of-type(2) {
+    background-image: url(../../images/proj2.png);
+  }
+  &:nth-of-type(3) {
+    background-image: url(../../images/proj3two.png);
+  }
+  &:nth-of-type(4) {
+    background-image: url(../../images/proj4two.png);
+  }
+}
+.icon {
+  align-items: center;
+  box-shadow: 2px 1px 1px 1px #989898;
+  border: 1px solid #de8379;
+  background-color: #fff;
+  border-radius: 50%;
+  bottom: 1rem;
+  display: flex;
+  font-size: 1.5rem;
+  height: 2.5rem;
+  justify-content: center;
+  left: 1.1rem;
+  position: absolute;
+  width: 2.5rem;
+  a {
+    text-decoration: none;
+    color: variables.$main-text-color;
+  }
+  a:hover {
+    color: #f56efa;
+  }
+}
+.card-title {
+  bottom: 1.2rem;
+  color: variables.$white;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  left: 4.5rem;
+  line-height: 1.1;
+  opacity: 0;
+  position: absolute;
+  font-family: variables.$header-one-font-family;
+  text-shadow: 0.05rem 0.05rem 0.1rem rgba(0, 0, 0, 0.8);
+  transform: translateX(2rem);
+  transition: 290ms cubic-bezier(0.05, 0.61, 0.41, 0.95) 300ms;
+  transition-property: opacity, transform;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.subtitle {
+  padding-top: 2%;
+  font-size: 0.9rem;
+}
+//expanding effect
+.radio:checked + .content {
+  border-radius: 2rem;
+  box-shadow: 0.3rem 0.3rem 0.4rem rgba(0, 0, 0, 0.3);
+  flex: 10;
+}
+.radio:checked + .content > .card-title {
+  opacity: 1;
+  transform: translateX(0);
+}
+//media
+@media (max-width: 998px) {
+  .general-container {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 4%;
+    height: 65rem;
+    width: 95%;
+  }
+  .content {
+    &:nth-of-type(3) {
+      background-image: url(../../images/proj3.png);
+    }
+    &:nth-of-type(4) {
+      background-image: url(../../images/proj4.png);
+    }
+    // &:nth-of-type(5) {
+    //   background-image: url(../../images/proj1.jpg);
+    //   margin-right: 0;
+    // }
+  }
+}

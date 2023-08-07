@@ -1,0 +1,96 @@
+@use "./variables.scss";
+
+body {
+  background-image: variables.$pages-bg-color;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: variables.$general-font;
+}
+
+//navigation bar
+.header {
+  position: static;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10%;
+  background: transparent;
+  z-index: 100;
+}
+.navbar .navbar-brand {
+  font-size: 25px;
+  color: variables.$main-text-color;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: default;
+  font-family: variables.$logo-font-family;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+}
+.navbar .nav-link {
+  font-size: 18px;
+  color: variables.$main-text-color;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 22px;
+  transition: 0.3s;
+  background-image: linear-gradient(to right, #22718e, #183795 50%, #000 50%);
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  position: relative;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  animation: slideTop 0.5s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+}
+.navbar a {
+  &:before {
+    content: "";
+    background: variables.$emphasized-text-color;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover::before {
+    width: 100%;
+  }
+}
+.navbar a:hover,
+.navbar a.active {
+  color: variables.$emphasized-text-color;
+  background-position: 0;
+}
+
+//keyframes animation
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideTop {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

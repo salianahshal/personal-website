@@ -1,0 +1,235 @@
+@charset "UTF-8";
+body {
+  background-image: linear-gradient(to right top, #bad1f1, #bbcdee, #bdc9eb, #bec4e7, #c0c0e3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "roboto", "sans-serif";
+}
+
+.header {
+  position: static;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10%;
+  background: transparent;
+  z-index: 100;
+}
+
+.navbar .navbar-brand {
+  font-size: 25px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: default;
+  font-family: "Courier New", Courier, monospace;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+}
+
+.navbar .nav-link {
+  font-size: 18px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 22px;
+  transition: 0.3s;
+  background-image: linear-gradient(to right, #22718e, #183795 50%, #000 50%);
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  position: relative;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  animation: slideTop 0.5s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+}
+
+.navbar a:before {
+  content: "";
+  background: #183795;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
+.navbar a:hover::before {
+  width: 100%;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #183795;
+  background-position: 0;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideTop {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.skills-category {
+  padding-top: 4%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.skills-category .skills-cards-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.skills-cards-box .skills-card {
+  flex: 0 50%;
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.9), 0 5px 15px 0 rgba(37, 44, 97, 0.15);
+  border-radius: 15px;
+  border: 2px inset #fff;
+  margin: 45px 15px 50px;
+  padding: 35px 15px 55px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  min-height: 265px;
+  transition: 0.7s;
+}
+.skills-cards-box .skills-card .skills-card-title h3 {
+  color: #212121;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 13px 0px;
+  font-family: monospace, "Roboto Mono", sans-serif;
+}
+.skills-cards-box .skills-card:hover {
+  background: #dae1eb;
+  color: #fff;
+  transform: scale(1.1);
+  z-index: 9;
+  border: 2px solid #fff;
+}
+.skills-cards-box .skills-card::before {
+  background: rgba(85, 108, 214, 0.1);
+}
+.skills-cards-box .skills-card:hover .skills-card-title h3 {
+  color: #1f4782;
+  font-weight: 500;
+}
+.skills-cards-box .skills-card:hover .solu_description p {
+  color: #fff;
+}
+.skills-cards-box .skills-card:before {
+  content: "";
+  position: absolute;
+  background: rgba(85, 108, 214, 0.05);
+  width: 170px;
+  height: 400px;
+  z-index: -1;
+  transform: rotate(42deg);
+  right: -56px;
+  top: -23px;
+  border-radius: 35px;
+}
+
+.hover-bubble {
+  position: absolute;
+  background: rgba(54, 81, 207, 0.15);
+  width: 100rem;
+  height: 100rem;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  top: 16rem;
+  border-radius: 50%;
+  transform: rotate(-36deg);
+  left: -18rem;
+  transition: 0.7s;
+}
+
+.skills-cards-box .skills-card:hover .hover-bubble {
+  top: 0rem;
+}
+
+.skills-banner {
+  text-align: center;
+}
+
+.skills-banner img {
+  border: 2px inset #fff;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.skills-icons .skill-icon {
+  line-height: 0.5rem;
+  list-style: none;
+}
+.skills-icons .skill-icon:not(:last-child) {
+  margin-bottom: 15px;
+}
+.skills-icons .skill-icon:before {
+  content: "൏";
+  margin-right: 20px;
+}
+
+/*media query*/
+@media screen and (min-width: 490px) {
+  .card_top_3 {
+    position: relative;
+    top: 0;
+  }
+  .skills-category {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .skills-category .skills-cards-box {
+    flex: auto;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .skills-category .skills-cards-box {
+    flex: 1;
+  }
+  .card_top_3 {
+    position: relative;
+    top: -3rem;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .card_top_3 {
+    position: relative;
+    top: -3rem;
+  }
+  .skills-category {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+/*# sourceMappingURL=skills.css.map */
