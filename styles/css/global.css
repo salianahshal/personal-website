@@ -235,11 +235,12 @@ body {
   .paper:before,
   .paper:after {
     margin-bottom: 10%;
-    min-width: 460px;
+    min-width: 60px;
     height: 460px;
   }
   .pic img {
-    min-width: 330px;
+    padding-top: 30px;
+    min-width: 275px;
   }
 }
 .paper:before,
