@@ -1,6 +1,22 @@
 @use "../utilities/variables.scss";
 @use "../utilities/navigation.scss";
 
+h2 {
+  font-family: variables.$header-one-font-family;
+  text-align: center;
+  border-radius: 8px;
+  border: 2px outset variables.$white;
+  padding: 6px;
+  margin: 0 34%;
+  letter-spacing: 4px;
+}
+h5 {
+  font-family: variables.$paragraphs-font-family;
+  margin-top: 3%;
+  text-align: center;
+  font-weight: 600;
+  font-style: italic;
+}
 .general-container {
   margin: 4% auto;
   display: flex;
@@ -115,3 +131,4 @@
     // }
   }
 }
+//New
