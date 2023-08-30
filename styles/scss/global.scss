@@ -82,7 +82,9 @@
   padding: 12px 28px;
   margin-top: 20px;
   background-color: #d4e6e5;
-  box-shadow: 3px 3px 10px variables.$emphasized-text-color;
+  // box-shadow: 3px 3px 10px variables.$emphasized-text-color;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   font-size: 18px;
   letter-spacing: 1px;
   border: 0.5px solid variables.$main-text-color;
@@ -136,6 +138,10 @@
   border: 1.5px outset #bbb;
 }
 @media (max-width: 1199px) {
+  .home {
+    padding-right: 8%;
+    margin: 0% -8%;
+  }
   .container .home-content {
     padding-left: 10%;
   }

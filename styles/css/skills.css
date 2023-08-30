@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "roboto", "sans-serif";
+  font-family: "Roboto", "sans-serif";
 }
 
 .header {
@@ -99,6 +99,7 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 16px;
 }
 .skills-category .skills-cards-box {
   display: flex;
@@ -108,10 +109,8 @@ body {
 
 .skills-cards-box .skills-card {
   flex: 0 50%;
-  background: #fff;
-  box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.9), 0 5px 15px 0 rgba(37, 44, 97, 0.15);
   border-radius: 15px;
-  border: 2px inset #fff;
+  background: #fff;
   margin: 45px 15px 50px;
   padding: 35px 15px 55px;
   position: relative;
@@ -119,6 +118,7 @@ body {
   overflow: hidden;
   min-height: 265px;
   transition: 0.7s;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .skills-cards-box .skills-card .skills-card-title h3 {
   color: #212121;
@@ -129,7 +129,6 @@ body {
 }
 .skills-cards-box .skills-card:hover {
   background: #dae1eb;
-  color: #fff;
   transform: scale(1.1);
   z-index: 9;
   border: 2px solid #fff;
@@ -138,7 +137,6 @@ body {
   background: rgba(85, 108, 214, 0.1);
 }
 .skills-cards-box .skills-card:hover .skills-card-title h3 {
-  color: #1f4782;
   font-weight: 500;
 }
 .skills-cards-box .skills-card:hover .solu_description p {

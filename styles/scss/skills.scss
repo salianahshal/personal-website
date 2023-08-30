@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 16px;
   .skills-cards-box {
     display: flex;
     flex-direction: column;
@@ -16,11 +17,8 @@
 //style of the card
 .skills-cards-box .skills-card {
   flex: 0 50%;
-  background: variables.$white;
-  box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.9),
-    0 5px 15px 0 rgba(37, 44, 97, 0.15);
   border-radius: 15px;
-  border: 2px inset variables.$white;
+  background: variables.$white;
   margin: 45px 15px 50px;
   padding: 35px 15px 55px;
   position: relative;
@@ -28,6 +26,8 @@
   overflow: hidden;
   min-height: 265px;
   transition: 0.7s;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   .skills-card-title h3 {
     color: #212121;
     font-size: 1.3rem;
@@ -37,7 +37,7 @@
   }
   &:hover {
     background: #dae1eb;
-    color: variables.$white;
+    // color: variables.$white;
     transform: scale(1.1);
     z-index: 9;
     border: 2px solid variables.$white;
@@ -46,7 +46,7 @@
     background: rgb(85 108 214 / 10%);
   }
   &:hover .skills-card-title h3 {
-    color: variables.$dark-blue;
+    // color: variables.$dark-blue;
     font-weight: 500;
   }
   &:hover .solu_description p {

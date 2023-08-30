@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Roboto&family=Roboto+Mono&family=Shrikhand&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Eagle+Lake&family=Roboto&family=Heebo&family=Lato&family=Roboto+Mono&family=Shrikhand&display=swap"
       rel="stylesheet"
     />
     <!-- Bootstrap and CSS -->
@@ -23,7 +23,8 @@
     </style>
   </head>
 
-  <body class="proj-body">
+  <body>
+    <!-- Navbar -->
     <div class="containee-fluid header">
       <nav class="navbar navbar-expand-md navbar-light">
         <span class="navbar-brand mb-0">Portfolio.</span>
@@ -60,66 +61,115 @@
         </div>
       </nav>
     </div>
-    <h2>Featured Projects</h2>
-    <h5>
-      Below are the projects that I created. To view them click on the icons on
-      each card!
-    </h5>
-    <div class="general-container container">
-      <input class="radio" type="radio" name="card" id="card-1" checked />
-      <label class="content" for="card-1">
-        <span class="icon">
-          <a
-            href="https://github.com/salianahshal/cs-tracks.git"
-            target="_blank"
-            ><iconify-icon icon="file-icons:csound"></iconify-icon
-          ></a>
-        </span>
-        <h3 class="card-title">
-          CS Tracks
-          <span class="subtitle">@salianahshal</span>
-        </h3>
-      </label>
-      <input class="radio" type="radio" name="card" id="card-2" />
-      <label class="content" for="card-2">
-        <span class="icon">
-          <iconify-icon
-            icon="streamline:programming-browser-search-search-window-glass-app-code-programming-query-find-magnifying-apps"
-          ></iconify-icon>
-        </span>
-        <h3 class="card-title">
-          Arab American Women
-          <span class="subtitle">@salianahshal</span>
-        </h3>
-      </label>
-      <input class="radio" type="radio" name="card" id="card-3" />
-      <label class="content" for="card-3">
-        <span class="icon">
-          <iconify-icon icon="solar:programming-broken"></iconify-icon>
-        </span>
-        <h3 class="card-title">
-          TBD
-          <span class="subtitle">@salianahshal</span>
-        </h3>
-      </label>
-      <input class="radio" type="radio" name="card" id="card-4" />
-      <label class="content" for="card-4">
-        <span class="icon">
-          <iconify-icon icon="icon-park:code-computer"></iconify-icon>
-        </span>
-        <h3 class="card-title">
-          TBD
-          <span class="subtitle">@salianahshal</span>
-        </h3>
-      </label>
-    </div>
+
+    <!-- Start of Projects Display -->
+    <div class="container text-center">
+      <h1 class="proj-title">Works Showcase</h1>
+
+      <!-- Filtering Navbar -->
+      <div id="myBtnContainer">
+        <button class="btn active" onclick="filterSelection('all')">All</button>
+        <button class="btn" onclick="filterSelection('development')">
+          Development
+        </button>
+        <button class="btn" onclick="filterSelection('design')">
+          Advocacy Graphic Designs
+        </button>
+      </div>
+
+      <!-- List of Projects & Designs -->
+      <div class="row">
+          <div class="column main__div proj development">
+            <div class="proj__div">
+              <img src="images/Keyboard.avif" alt="" class="proj__img" />
+            </div>
+            <div class="proj__div proj_div_info">
+              <h4 class="proj_sec_name">Explore CS Tracks</h4>
+              <p class="proj__desc">
+                Welcome to a resource hub tailored for those embarking on their tech journey. 
+                This collection predominantly comprises beginner-friendly resources, readily accessible without any cost.
+                <a href="https://github.com/salianahshal/cs-tracks.git" target="_blank" class="fancy-button">
+                  <span></span>Learn More
+                </a>
+                
+              </p>
+            </div>
+            <div class="proj__div">
+              <h2 class="proj-name">CS Tracks</h2>
+            </div>
+          </div>
+
+          <div class="column main__div proj development">
+            <div class="proj__div">
+              <img src="images/AAW.png" alt="" class="proj__img" />
+            </div>
+            <div class="proj__div proj_div_info">
+              <h4 class="proj_sec_name">Tech's Hidden Voices</h4>
+              <p class="proj__desc">
+                Rewriting the Code revolutionizes tech leadership by supporting women in tech careers. 
+                As a community member, I aspire to highlight accomplished Arab women in this realm, shedding light on their often unnoticed accomplishments and obstacles. 
+                Stay tuned for the final product!
+              </p>
+            </div>
+            <div class="proj__div">
+              <h2 class="proj-name">Arab Women</h2>
+            </div>
+          </div>
+          
+          <!-- Start of Graphics -->
+          <div class="column main__div proj design">
+            <div class="proj__div">
+              <img
+                src="images/adv-hijab.png"
+                alt=""
+                class="proj__img"
+              />
+            </div>
+            <div class="proj__div proj_div_info">
+              <h4 class="proj_sec_name">War on Hijab</h4>
+              <p class="proj__desc">
+                The War on Hijab: a struggle for identity, expression, and freedom explores the ongoing global conflict surrounding the wearing of the hijab. 
+                Governments, cultural norms, and individual choices collide in this complex landscape, with women's identity and personal agency at the heart of the debate.
+                This is a short project on this senstive topic.
+                <a href="pdfFiles/Hijab Ban.pdf" target="_blank" class="fancy-button">
+                  <span></span>Download PDF
+                </a>
+              </p>
+            </div>
+            <div class="proj__div">
+              <h2 class="proj-name">Hijab Ban</h2>
+            </div>
+          </div>
+
+          <div class="column main__div proj design">
+            <div class="proj__div">
+              <img
+                src="images/AI-proj.png"
+                alt=""
+                class="proj__img"
+              />
+            </div>
+            <div class="proj__div proj_div_info">
+              <h4 class="proj_sec_name">AI's Impact on Medicine</h4>
+              <p class="proj__desc">
+                Explored Graph Neural Networks (GNNs), a revolutionary A.I. technique in Drug Discovery and Protein Prediction. 
+                I coded in Python to train and test GNNs for predicting molecular properties, a critical aspect of drug discovery.
+                <br />
+                <a href="pdfFiles/Drug Discovery with GNN.pdf" target="_blank" class="fancy-button">
+                  <span></span>Download PDF
+                </a>
+              </p>
+            </div>
+            <div class="proj__div">
+              <h2 class="proj-name ai-title">Drug Discovery</h2>
+            </div>
+          </div>
+      </div>
 
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://kit.fontawesome.com/7bb2d86497.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
