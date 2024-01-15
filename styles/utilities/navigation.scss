@@ -7,6 +7,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-weight: 900;
   font-family: variables.$general-font;
 }
 
@@ -16,12 +17,15 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 10%;
+  padding: 20px 25px;
+  margin-bottom: 2%;
   background: transparent;
   z-index: 100;
 }
+
 .navbar .navbar-brand {
   font-size: 25px;
+  text-shadow: 0 2px 1px #948dc3, -1px 3px 1px #edf1fb, -2px 5px 1px #654fa5;
   color: variables.$main-text-color;
   text-decoration: none;
   font-weight: 700;
@@ -31,6 +35,7 @@ body {
   opacity: 0;
   animation: slideRight 1s ease forwards;
 }
+
 .navbar .nav-link {
   font-size: 18px;
   color: variables.$main-text-color;
@@ -72,7 +77,59 @@ body {
   color: variables.$emphasized-text-color;
   background-position: 0;
 }
+.navbar-toggler {
+  background-color: #9ea9d4;
+}
+.navbar-toggler-icon {
+  background-image: none !important;
+  background-color: var(--bs-gray-800);
+  height: 3px;
+  width: 25px;
+  margin: 10px 0;
+  position: relative;
+  transition: all 0.35s ease-out;
+  transform-origin: center;
+}
 
+.navbar-toggler-icon::before {
+  display: block;
+  background-color: var(--bs-gray-800);
+  height: 3px;
+  content: "";
+  position: relative;
+  top: -7px;
+  transition: all 0.15s ease-out;
+  transform-origin: center;
+}
+
+.navbar-toggler-icon::after {
+  display: block;
+  background-color: var(--bs-gray-800);
+  height: 3px;
+  content: "";
+  position: relative;
+  top: 4px;
+  transition: all 0.35s ease-out;
+  transform-origin: center;
+}
+
+.navbar-dark .navbar-toggler-icon,
+.navbar-dark .navbar-toggler-icon::before,
+.navbar-dark .navbar-toggler-icon::after {
+  background-color: var(--bs-gray-100);
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+  transform: rotate(45deg);
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
+  opacity: 0;
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
+  transform: rotate(-90deg) translateX(7px);
+}
 //keyframes animation
 @keyframes slideRight {
   0% {

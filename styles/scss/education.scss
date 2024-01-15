@@ -1,16 +1,15 @@
 @use "../utilities/variables.scss";
 @use "../utilities/navigation.scss";
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@500;600;900&display=swap");
 
 .row .col {
   padding-bottom: 10px;
 }
 
-//cover
 .page-section {
   padding: 7.5rem 0;
 }
 
-//cover (ul)
 .linetime {
   position: relative;
   list-style: none;
@@ -29,7 +28,6 @@
   }
 }
 
-//cover (li)
 .linetime li {
   position: relative;
   margin-bottom: 2rem;
@@ -47,6 +45,12 @@
 .linetime-panel {
   position: relative;
   padding-left: 100px;
+}
+
+.text-muted {
+  font-family: "Jura", sans-serif;
+  font-weight: 800;
+  color: black !important;
 }
 
 .linetime-img {
@@ -69,6 +73,10 @@
 }
 .linetime-panel-subheading h2 {
   font-family: "Shrikhand", serif;
+  text-shadow: 1px 1px 1px #957dad, 1px 1px 1px #957dad,
+    1px 6px 2px rgba(16, 16, 16, 0.2), 1px 8px 4px rgba(16, 16, 16, 0.1);
+  transform: translateY(-0.025em) translateX(0.04em);
+  transition: text-shadow 0.3s linear;
 }
 
 @media (min-width: 768px) {

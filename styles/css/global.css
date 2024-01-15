@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@500;600;900&display=swap");
 body {
   background-image: linear-gradient(to right top, #bad1f1, #bbcdee, #bdc9eb, #bec4e7, #c0c0e3);
 }
@@ -6,6 +7,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-weight: 900;
   font-family: "Roboto", "sans-serif";
 }
 
@@ -14,13 +16,15 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 10%;
+  padding: 20px 25px;
+  margin-bottom: 2%;
   background: transparent;
   z-index: 100;
 }
 
 .navbar .navbar-brand {
   font-size: 25px;
+  text-shadow: 0 2px 1px #948dc3, -1px 3px 1px #edf1fb, -2px 5px 1px #654fa5;
   color: #000;
   text-decoration: none;
   font-weight: 700;
@@ -71,6 +75,61 @@ body {
 .navbar a.active {
   color: #183795;
   background-position: 0;
+}
+
+.navbar-toggler {
+  background-color: #9ea9d4;
+}
+
+.navbar-toggler-icon {
+  background-image: none !important;
+  background-color: var(--bs-gray-800);
+  height: 3px;
+  width: 25px;
+  margin: 10px 0;
+  position: relative;
+  transition: all 0.35s ease-out;
+  transform-origin: center;
+}
+
+.navbar-toggler-icon::before {
+  display: block;
+  background-color: var(--bs-gray-800);
+  height: 3px;
+  content: "";
+  position: relative;
+  top: -7px;
+  transition: all 0.15s ease-out;
+  transform-origin: center;
+}
+
+.navbar-toggler-icon::after {
+  display: block;
+  background-color: var(--bs-gray-800);
+  height: 3px;
+  content: "";
+  position: relative;
+  top: 4px;
+  transition: all 0.35s ease-out;
+  transform-origin: center;
+}
+
+.navbar-dark .navbar-toggler-icon,
+.navbar-dark .navbar-toggler-icon::before,
+.navbar-dark .navbar-toggler-icon::after {
+  background-color: var(--bs-gray-100);
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+  transform: rotate(45deg);
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
+  opacity: 0;
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
+  transform: rotate(-90deg) translateX(7px);
 }
 
 @keyframes slideRight {
@@ -127,6 +186,7 @@ body {
 }
 .home-content h1 {
   font-family: "Shrikhand", serif;
+  text-shadow: 1px 1px 1px #957dad, 1px 2px 1px #957dad, 1px 2px 1px #957dad, 1px 6px 2px rgba(16, 16, 16, 0.2), 1px 8px 4px rgba(16, 16, 16, 0.1);
   font-size: 2.5rem;
   letter-spacing: 2px;
   margin: -3px 0;
@@ -139,8 +199,8 @@ body {
   font-size: 1.1rem;
   line-height: 28px;
   margin-right: 6%;
-  font-family: "Rubik", sans-serif;
-  font-weight: 500;
+  font-family: "Jura", sans-serif;
+  font-weight: 900;
   opacity: 0;
   animation: slideLeft 1s ease forwards;
   animation-delay: 1s;
@@ -150,7 +210,7 @@ body {
   display: inline-flex;
   width: 40px;
   height: 40px;
-  background: #f0f3fd;
+  background: #dbebfd;
   text-decoration: none;
   margin: 25px 15px;
   border-radius: 50%;
@@ -167,18 +227,18 @@ body {
   line-height: 40px;
 }
 .socials a:hover {
-  background-color: #fde2fe;
+  background-color: #b0becd;
 }
 
 .btn {
   display: inline-block;
   padding: 12px 28px;
   margin-top: 20px;
-  background-color: #d4e6e5;
+  background-color: #d1cff7;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   font-size: 18px;
   letter-spacing: 1px;
-  border: 0.5px solid #000;
+  border: 0.4px solid #777;
   text-decoration: none;
   font-weight: 900;
   opacity: 0;
@@ -186,7 +246,7 @@ body {
   animation-delay: 2s;
 }
 .btn:hover {
-  background-color: #fff;
+  background-color: #b0becd;
 }
 
 .home-content .btn:active {

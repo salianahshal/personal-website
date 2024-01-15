@@ -1,141 +1,210 @@
 @use "../utilities/variables.scss";
-@use "../utilities/navigation.scss";
+@import "../utilities/navigation.scss";
 
-.skills-category {
-  padding-top: 4%;
+.mobile {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 16px;
-  .skills-cards-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
 }
 
-//style of the card
-.skills-cards-box .skills-card {
-  flex: 0 50%;
-  border-radius: 15px;
-  background: variables.$white;
-  margin: 45px 15px 50px;
-  padding: 35px 15px 55px;
+.phone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 390px;
+  height: 720px;
+  background: #948dc2;
+  border-radius: 30px;
+  padding: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.phone-mirror {
   position: relative;
-  z-index: 1;
-  overflow: hidden;
-  min-height: 265px;
-  transition: 0.7s;
+  width: 420px;
+  height: 670px;
+  background-color: #d1cff7;
+  border-radius: 30px;
+}
+
+.topWrapper {
+  position: relative;
+  width: 130px;
+  height: 20px;
+  margin: 0px auto 0 auto;
+  float: left;
+  left: 30%;
+  background-color: #b3afdb;
+  border-radius: 0 0 45px 45px;
+}
+
+.line-rec {
+  position: relative;
+  width: 60px;
+  height: 6px;
+  margin: 0px auto 0 auto;
+  float: left;
+  left: 20%;
+  top: 4px;
+  background-color: rgb(83, 83, 82);
+  border-radius: 5px;
+  border: 1px solid rgb(214, 214, 214);
+}
+
+.camera {
+  position: relative;
+  float: left;
+  margin-right: 8px;
+  left: 18%;
+  width: 11px;
+  height: 11px;
+  top: 1px;
+  background-color: rgb(83, 83, 82);
+  border-radius: 30px;
+  border: 1px solid rgb(214, 214, 214);
+}
+
+.styled-button {
+  font-size: 16px;
+  margin: 50px 35px 30px;
+  letter-spacing: 1px;
+  padding: 15px;
+  width: 80%;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-family: variables.$general-font;
+  text-shadow: 1px 1px 1px #957dad, 1px 2px 1px #957dad, 1px 2px 1px #957dad,
+    1px 6px 2px rgba(16, 16, 16, 0.2), 1px 8px 4px rgba(16, 16, 16, 0.1);
+  background-color: #a2a1cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.styled-button:hover {
+  transform: scale(1.1);
+  z-index: 9;
+  border: 2px solid variables.$white;
+}
+.button-container {
+  position: relative;
+}
+
+.button-info {
+  display: none;
+  position: absolute;
+  top: 0;
+}
+
+.button-container:nth-child(odd) .button-info {
+  left: 120%;
+}
+
+.button-container:nth-child(even) .button-info {
+  right: 120%;
+}
+
+.styled-button:hover + .button-info {
+  display: block;
+}
+
+.skills-icons ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-icon {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.skill-icon iconify-icon {
+  font-size: 2em;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  .skills-card-title h3 {
-    color: #212121;
-    font-size: 1.3rem;
-    font-weight: 500;
-    margin: 13px 0px;
-    font-family: variables.$headrs-font-family;
-  }
-  &:hover {
-    background: #dae1eb;
-    // color: variables.$white;
-    transform: scale(1.1);
-    z-index: 9;
-    border: 2px solid variables.$white;
-  }
-  &::before {
-    background: rgb(85 108 214 / 10%);
-  }
-  &:hover .skills-card-title h3 {
-    // color: variables.$dark-blue;
-    font-weight: 500;
-  }
-  &:hover .solu_description p {
-    color: variables.$white;
-  }
-  &:before {
-    content: "";
-    position: absolute;
-    background: rgb(85 108 214 / 5%);
-    width: 170px;
-    height: 400px;
-    z-index: -1;
-    transform: rotate(42deg);
-    right: -56px;
-    top: -23px;
-    border-radius: 35px;
-  }
-}
-.hover-bubble {
-  position: absolute;
-  background: rgb(54 81 207 / 15%);
-  width: 100rem;
-  height: 100rem;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  top: 16rem;
+  background-color: #edf1fb;
   border-radius: 50%;
-  transform: rotate(-36deg);
-  left: -18rem;
-  transition: 0.7s;
-}
-.skills-cards-box .skills-card:hover .hover-bubble {
-  top: 0rem;
+  padding: 10px;
+  margin: 4px auto;
+  transition: background-color 0.3s ease;
 }
 
-//adjusts the image banner of the cards
-.skills-banner {
-  text-align: center;
-}
-.skills-banner img {
-  border: 2px inset variables.$white;
-  width: 100%;
-  border-radius: 10px;
-}
+/* Media query for smaller screens */
+@media only screen and (max-width: 668px) {
+  .phone {
+    height: 760px;
+  }
+  .phone-mirror {
+    height: 720px;
+  }
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    // margin-left: px;
+  }
 
-//changes the style of the list
-.skills-icons .skill-icon {
-  line-height: 0.5rem;
-  list-style: none;
-  &:not(:last-child) {
-    margin-bottom: 15px;
-  }
-  &:before {
-    content: "\0D4F";
-    margin-right: 20px;
-  }
-}
-
-/*media query*/
-@media screen and (min-width: 490px) {
-  .card_top_3 {
-    position: relative;
-    top: 0;
-  }
-  .skills-category {
+  .styled-button {
     width: 100%;
-    margin: 0 auto;
-    .skills-cards-box {
-      flex: auto;
-    }
+    margin-left: 32%;
+  }
+
+  .button-info {
+    display: none;
+    position: relative;
+    text-align: center;
+  }
+  .button-container:nth-child(odd) .button-info,
+  .button-container:nth-child(even) .button-info {
+    right: 0;
+    left: 0;
+  }
+  .button-container:hover .button-info {
+    display: block;
+  }
+
+  .skill-icon {
+    margin: 0 20px;
+  }
+
+  .skill-icon iconify-icon {
+    font-size: 1.5em;
+    padding: 8px;
   }
 }
-@media only screen and (min-width: 768px) {
-  .skills-category .skills-cards-box {
-    flex: 1;
-  }
-  .card_top_3 {
-    position: relative;
-    top: -3rem;
-  }
+
+.popup-container {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
 }
-@media only screen and (min-width: 1400px) {
-  .card_top_3 {
-    position: relative;
-    top: -3rem;
-  }
-  .skills-category {
-    width: 60%;
-    margin: 0 auto;
-  }
+
+.popup-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 2em;
+  color: #fff;
+  cursor: pointer;
 }

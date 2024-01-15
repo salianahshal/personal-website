@@ -1,6 +1,6 @@
 //title display for home page
-const typed = new Typed(".multiple-text", {
-  strings: ["Coder", "Web Developer", "Web Designer"],
+const typyingEffect = new Typed(".multitext", {
+  strings: ["Coder", "Web Developer", "Designer"],
   typeSpeed: 100,
   backSpeed: 100,
   backDelay: 1200,
@@ -12,7 +12,7 @@ filterSelection("all");
 
 function filterSelection(c) {
   let x, i;
-  x = document.getElementsByClassName("proj"); // Change the class name to match your project container
+  x = document.getElementsByClassName("proj");
   if (c == "all") c = "";
 
   for (i = 0; i < x.length; i++) {
